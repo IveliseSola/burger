@@ -15,5 +15,11 @@
 <form action="/" method="POST">
 	<textarea type="text" name="burger" placeholder="Enter your burger name here and click Submit"></textarea>
 
-	<button type="submit">Submit</button>
+	<button class="submit-btn" type="submit">Submit</button>
 </form>
+
+<script type="text/javascript">
+$(".submit-btn").on("click", function(event){
+    event.preventDefault();
+})
+</script>
