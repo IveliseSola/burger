@@ -23,13 +23,14 @@ router.post("/burgers", function (req, res) {
         });
 });
 
-router.get("/burgers", function (req, res) {
+router.get("/api/burgers", function (req, res) {
     burger.all(function (data) {
         var newObject = {
             burgers: data
         };
         console.log(newObject);
-        res.render("index", newObject);
+        // res.render("index", newObject);
+        res.json(data);
     });
 });
 

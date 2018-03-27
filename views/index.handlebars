@@ -25,17 +25,17 @@
 </form>
 
 <script type="text/javascript">
-$(".submit-btn").on("click", function(event){
+$(".submit-btn").on("submit", function(event){
     event.preventDefault();
     var newBurger = {
       burger_name: $("#burger-text").val().trim();
       devoured: false;
     };
-    console.log(newBurger);
-    $ajax("/burgers", {
+    $ajax("/api/burgers", {
       type:"POST",
-      data:newBurger
+      data: newBurger
     }).then(function(){
+      console.log("created new burger");
       location.reload();
     })
 })
