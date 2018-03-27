@@ -38,16 +38,17 @@ var orm = {
         });
     },
     insertOne: function (table, cols, vals, cb) {
-        var queryString = "INSERT INTO" + table;
-        queryString +=
-            queryString += " (";
+        var queryString = "INSERT INTO " + table; 
+        // + "( " + cols.toString() + " ) VALUES ( " + printQuestionMarks(vals.length) + " )" ;
+      
+        queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
-        console.log(queryString);
+        console.log(queryString + "this is the query");
 
         connection.query(queryString, vals, function (err, result) {
             if (err) {

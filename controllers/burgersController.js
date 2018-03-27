@@ -3,7 +3,6 @@ var router = express.Router();
 
 var burger = require("../models/burger.js");
 
-
 router.get("/", function (req, res) {
     burger.all(function (data) {
         var newObject = {
@@ -14,25 +13,26 @@ router.get("/", function (req, res) {
     });
 });
 
-router.post("/burgers", function (req, res) {
+router.post("/api/burgers", function (req, res) {
     burger.create(["burger_name", "devoured"],
         [
-            req.body.name, req.body.sleepy
+            req.body.burger_name, req.body.devoured
         ], function (result) {
-            res.json({ id: result.insertId });
+            // res.json({ id: result.insertId });
+            res.json({ result});
         });
 });
 
-router.get("/api/burgers", function (req, res) {
-    burger.all(function (data) {
-        var newObject = {
-            burgers: data
-        };
-        console.log(newObject);
-        // res.render("index", newObject);
-        res.json(data);
-    });
-});
+// router.get("/api/burgers", function (req, res) {
+//     burger.all(function (data) {
+//         var newObject = {
+//             burgers: data
+//         };
+//         console.log(newObject);
+//         // res.render("index", newObject);
+//         res.json(data);
+//     });
+// });
 
 router.put("/api/burgers/:id", function (req, res) {
     var condition = "id = " + req.params.id;

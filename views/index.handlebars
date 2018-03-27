@@ -1,42 +1,26 @@
 <h1>Eat a Burger</h1>
 
-<h2>Burgers ready to devour!</h2>
-
 <div class="ready-to-devour">
-<ol>
-  {{#each burgers}}
+  <h2>Burgers ready to devour!</h2>
+
+  <ol>
+    {{#each burgers}}
     <li>
-  	   {{!-- <p>id: {{this.id}}</p> --}}
-       <p>{{this.burger_name}}</p>
-       <button id="devour-btn" type="submit">Devour it!</button>
-  	</li>
-  {{/each}}
-</ol>
+      {{!--
+      <p>id: {{this.id}}</p> --}}
+      <p>{{this.burger_name}}</p>
+      <button class="devour-btn" type="submit">Devour it!</button>
+    </li>
+    {{/each}}
+  </ol>
 </div>
 
 <div class="devoured">
 
 </div>
 
-<form action="/" method="POST">
-	<textarea id="burger-text" type="text" name="burger" placeholder="Enter your burger name here and click Submit"></textarea>
+<form>
+  <textarea id="burger-text" type="text" name="burger" placeholder="Enter your burger name here and click Submit"></textarea>
 
-	<button class="submit-btn" type="submit">Submit</button>
+  <button class="submit-btn" type="submit">Submit</button>
 </form>
-
-<script type="text/javascript">
-$(".submit-btn").on("submit", function(event){
-    event.preventDefault();
-    var newBurger = {
-      burger_name: $("#burger-text").val().trim();
-      devoured: false;
-    };
-    $ajax("/api/burgers", {
-      type:"POST",
-      data: newBurger
-    }).then(function(){
-      console.log("created new burger");
-      location.reload();
-    })
-})
-</script>
