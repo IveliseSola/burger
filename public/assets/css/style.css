@@ -7,17 +7,10 @@ body{
 h1{
     text-align: center;
 }
-{
 
-}
-h2
-
-/* .ready-to-devour{
-    background-color: rgba(187, 186, 186, 0.527);
-    height: 150px;
+.ready-to-devour{
     width: 300px;
-    padding: 5px;
-} */
+}
 
 ol li p{
     display: inline;
@@ -28,7 +21,6 @@ ol li p{
 .submit-btn{
     background-color: rgb(167, 26, 26);
     color: white;
-    margin-right: 100px;
 }
 
 #burger-text{
