@@ -2,7 +2,8 @@
 
 <h2>Burgers ready to devour!</h2>
 
-<ul>
+<div class="ready-to-devour">
+<ol>
   {{#each burgers}}
     <li>
   	   {{!-- <p>id: {{this.id}}</p> --}}
@@ -10,10 +11,15 @@
        <button id="devour-btn" type="submit">Devour it!</button>
   	</li>
   {{/each}}
-</ul>
+</ol>
+</div>
+
+<div class="devoured">
+
+</div>
 
 <form action="/" method="POST">
-	<textarea type="text" name="burger" placeholder="Enter your burger name here and click Submit"></textarea>
+	<textarea id="burger-text" type="text" name="burger" placeholder="Enter your burger name here and click Submit"></textarea>
 
 	<button class="submit-btn" type="submit">Submit</button>
 </form>
@@ -21,5 +27,16 @@
 <script type="text/javascript">
 $(".submit-btn").on("click", function(event){
     event.preventDefault();
+    var newBurger = {
+      burger_name: $("#burger-text").val().trim();
+      devoured: false;
+    };
+    console.log(newBurger);
+    $ajax("/burgers", {
+      type:"POST",
+      data:newBurger
+    }).then(function(){
+      location.reload();
+    })
 })
 </script>
