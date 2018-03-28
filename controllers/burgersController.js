@@ -19,21 +19,9 @@ router.post("/api/burgers", function (req, res) {
             req.body.burger_name, req.body.devoured
         ], function (result) {
             res.json({ id: result.insertId });
-            console.log({ id: result.insertId });
-            // res.json({ result});
         });
 });
 
-// router.get("/api/burgers", function (req, res) {
-//     burger.all(function (data) {
-//         var newObject = {
-//             burgers: data
-//         };
-//         console.log(newObject);
-//         // res.render("index", newObject);
-//         res.json(data);
-//     });
-// });
 
 router.put("/api/burgers/:id", function (req, res) {
     var condition = "id = " + req.params.id;
