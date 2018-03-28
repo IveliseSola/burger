@@ -2,22 +2,26 @@
 
 <div class="ready-to-devour">
   <h2>Burgers ready to devour!</h2>
-
   <ol>
-    {{#each burgers}}
-    {{!-- {{#unless devoured}} --}}
+    {{#each burgers}} {{#unless devoured}}
     <li>
-      {{!-- <span>{{this.id}}</span> --}}
       <p>{{this.burger_name}}</p>
       <button data-id="{{this.id}}" class="devour-btn" type="submit">Devour it!</button>
     </li>
-    {{!-- {{/unless}} --}}
-    {{/each}}
+    {{/unless}} {{/each}}
   </ol>
 </div>
 
 <div class="devoured">
 
+  <h2>Devoured!</h2>
+  <ol>
+    {{#each burgers}} {{#if devoured}}
+    <li>
+      <p>{{this.burger_name}}</p>
+    </li>
+    {{/if}} {{/each}}
+  </ol>
 </div>
 
 <form>

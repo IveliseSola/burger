@@ -9,7 +9,7 @@ $(function () {
             type: "POST",
             data: newBurger
         }).then(function () {
-            console.log("created new burger");
+            // console.log("created new burger");
             location.reload();
         })
     });
@@ -19,7 +19,7 @@ $(function () {
         var burgerDevored = {
            devoured: true
         };
-        
+
         $("li").detach().appendTo(".devoured");
 
         $.ajax("/api/burgers/" + id, {
