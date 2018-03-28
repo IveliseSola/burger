@@ -1,4 +1,7 @@
+
 <h1>Eat a Burger</h1>
+
+<div class="container">
 
 <div class="ready-to-devour">
   <h2>Burgers ready to devour!</h2>
@@ -12,8 +15,12 @@
   </ol>
 </div>
 
-<div class="devoured">
+<form class="form">
+  <textarea id="burger-text" type="text" name="burger" placeholder="Enter your burger name here and click Submit"></textarea>
+  <button class="submit-btn" type="submit">Submit</button>
+</form>
 
+<div class="devoured">
   <h2>Devoured!</h2>
   <ol>
     {{#each burgers}} {{#if devoured}}
@@ -24,7 +31,4 @@
   </ol>
 </div>
 
-<form>
-  <textarea id="burger-text" type="text" name="burger" placeholder="Enter your burger name here and click Submit"></textarea>
-  <button class="submit-btn" type="submit">Submit</button>
-</form>
+</div>

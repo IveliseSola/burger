@@ -20,7 +20,7 @@ $(function () {
            devoured: true
         };
 
-        $("li").detach().appendTo(".devoured");
+        // $("li").detach().appendTo(".devoured");
 
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
