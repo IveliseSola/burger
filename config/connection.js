@@ -8,7 +8,7 @@ var mysql = require("mysql");
 //     database: "burgers_db"
 // });
 
-module.exports = connection;
+
 
 var connection;
 if(process.env.JAWSDB_URL) {
@@ -20,7 +20,9 @@ if(process.env.JAWSDB_URL) {
         root: 3000,
         host: "localhost",
         user: "root",
-        password: "",
-        database: "db_name",
+        password: "root",
+        database: "burgers_db",
     });
 };
+
+module.exports = connection;
