@@ -10,9 +10,9 @@ The app was developed using **Node.js**, **Express** for routes creation and set
 the  **MySQL** database and object forms, and generate the **SQL** for the relational database.
 
 #### How to install the app
- 1- Run "npm install" in your terminal
- 2- Use the **schema.sql** and **seed.sql** to set the database. 
- 3- Run "node server.js" in your terminal
+ 1. Run "npm install" in your terminal
+ 2. Use the **schema.sql** and **seed.sql** to set the database. 
+ 3. Run "node server.js" in your terminal
 
 #### Demo
 The app is deployed in Heroku [here](https://still-garden-10892.herokuapp.com/)
